@@ -100,8 +100,6 @@ function getEnglishContent(): Translation {
         descriptions: {
           GameSphere: "A template for community-driven platform where gamers can review games, discover new titles, track progress on upcoming games and discuss about games.",
           Portfolio: "A personal site of mine, that you are currently visiting.",
-          dottopic: "Blog application limiting posting articles to limited users. Full CRUDs and admin management.",
-          MemoryDazzle: "Social media platform application allowing following users, posting text and files, reacting and commenting to posts and grouping them",
         },
       },
     },
@@ -179,10 +177,8 @@ function getPolishContent(): Translation {
           github: "Kod źródłowy",
         },
         descriptions: {
-          GameSphere: "Szablon dla platformy społecznościowej, gdzie gracze mogą recenzować gry, odkrywać nowe tytuły, śledzić postępy nadchodzących gier i dyskutować o grach.",
+          GameSphere: "Szablon dla platformy, gdzie gracze mogą recenzować gry, odkrywać nowe tytuły, śledzić postępy nadchodzących gier i dyskutować o grach.",
           Portfolio: "Moja strona, którą właśnie odwiedzasz.",
-          dottopic: "Aplikacja blogowa ograniczająca publikowanie artykułów do wybranych użytkowników. Pełne operacje CRUD i zarządzanie administratorskie.",
-          MemoryDazzle: "Aplikacja platformy społecznościowej umożliwiająca obserwowanie użytkowników, publikowanie tekstu i plików, reagowanie i komentowanie postów oraz grupowanie ich.",
         },
       },
     },

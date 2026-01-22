@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-const logoSrc = computed(() => new URL("../assets/avatar.png", import.meta.url).href);
+const logoSrc = computed((): string => new URL("../assets/avatar.png", import.meta.url).href);
 </script>
 
 <template>

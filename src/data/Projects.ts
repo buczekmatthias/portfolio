@@ -49,31 +49,5 @@ export function getProjects(): ProjectType[] {
       stack: getProjectStackContent(["vue", "tailwindcss", "typescript", "git"]),
       displayStack: getProjectStackContent(["vue", "tailwindcss", "typescript"]),
     },
-    {
-      name: "dottopic",
-      year: {
-        start: 2024,
-        end: 2025,
-      },
-      links: {
-        github: { link: "https://github.com/buczekmatthias/dottopic", variant: "outline", icon: getGithubIconClass() },
-      },
-      images: [],
-      stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
-      displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss"]),
-    },
-    {
-      name: "MemoryDazzle",
-      year: {
-        start: 2023,
-        end: 2024,
-      },
-      links: {
-        github: { link: "https://github.com/buczekmatthias/MemoryDazzle", variant: "outline", icon: getGithubIconClass() },
-      },
-      images: [],
-      stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
-      displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss"]),
-    },
   ];
 }
