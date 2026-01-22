@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getFileUrl(relativePath: string): string {
-  return new URL(`../assets/${relativePath}`, import.meta.url).href;
+  return new URL(relativePath, import.meta.url).href;
 }

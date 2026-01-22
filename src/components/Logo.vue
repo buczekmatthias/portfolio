@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { getFileUrl } from "@/lib/utils";
+import { computed } from "vue";
+
+const logoSrc = computed(() => new URL("../assets/avatar.png", import.meta.url).href);
 </script>
 
 <template>
   <img
-    :src="getFileUrl('avatar.png')"
+    :src="logoSrc"
     alt="Avatar"
     class="size-12 duration-450 hover:rotate-45 origin-bottom-right"
   />

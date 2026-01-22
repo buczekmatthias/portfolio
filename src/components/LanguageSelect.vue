@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { getSelectDisplayOptions, type LanguageOptionsDisplay } from "@/utils/useTranslations";
-import { getFileUrl } from "@/lib/utils";
 import { useTitle } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { onBeforeMount, watch } from "vue";
@@ -9,7 +8,7 @@ const i18n = useI18n();
 
 const optionsDisplays: LanguageOptionsDisplay = getSelectDisplayOptions();
 
-const getFlag = (filename: string): string => getFileUrl(`flags/${filename}`);
+const getFlag = (filename: string): string => new URL(`../assets/flags/${filename}`, import.meta.url).href;
 
 const setTitle = () => useTitle(`${i18n.t("full_name")} | Portfolio`);
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import type { ProjectType } from "@/data/Projects";
-import { getFileUrl } from "@/lib/utils";
 import LazyAvatar from "./LazyAvatar.vue";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
@@ -23,12 +22,12 @@ const props = defineProps<{
 const projectFolder = computed((): string => props.project.name.toLowerCase());
 
 const getProjectFileSrc = computed(() => (file: string = "thumbnail.png"): string => {
-  return getFileUrl(`projects/${projectFolder.value}/${file}`);
+  return new URL(`../assets/projects/${projectFolder.value}/${file}`, import.meta.url).href;
 });
 
 const processedImages = computed((): ProcessedImage[] =>
   props.project.images.map((img: string) => {
-    const url = getFileUrl(`projects/${projectFolder.value}/${img}`);
+    const url = new URL(`../assets/projects/${projectFolder.value}/${img}`, import.meta.url).href;
 
     return <ProcessedImage>{
       href: url,
