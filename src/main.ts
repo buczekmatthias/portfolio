@@ -1,9 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueLazyload from "vue3-lazyload";
 
-const app = createApp(App)
+import { getTranslation } from "@/utils/useTranslations";
 
-app.use(router)
+import "./css/app.css";
 
-app.mount('#app')
+const i18n = getTranslation();
+
+createApp(App).use(i18n).use(VueLazyload, {}).mount("#app");
