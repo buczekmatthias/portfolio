@@ -15,6 +15,15 @@ const socials = getSocialInfo();
       <p class="text-2xl">{{ $t("sections.hero.who") }}</p>
     </div>
     <div class="flex flex-wrap gap-4 sm:grid sm:grid-cols-2">
+      <Button as-child>
+        <a
+          :href="getFileUrl('cv.pdf')"
+          download
+          class="h-12"
+        >
+          {{ $t("sections.hero.download") }} CV
+        </a>
+      </Button>
       <template
         v-for="social in socials"
         :key="social.value"

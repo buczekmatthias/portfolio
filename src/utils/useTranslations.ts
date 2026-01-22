@@ -39,6 +39,7 @@ function getEnglishContent(): Translation {
         hi: "Hello!",
         name: "My name is Matthias.",
         who: "I'm Full-stack developer",
+        download: "Download",
       },
       availability: {
         available: "I'm available for work!",
@@ -119,6 +120,7 @@ function getPolishContent(): Translation {
         hi: "Cześć",
         name: "Nazywam się Maciej.",
         who: "Jestem Full-stack developerem",
+        download: "Pobierz",
       },
       availability: {
         available: "Jestem dostępny do zatrudnienia!",

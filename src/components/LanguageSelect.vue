@@ -9,7 +9,7 @@ const i18n = useI18n();
 
 const optionsDisplays: LanguageOptionsDisplay = getSelectDisplayOptions();
 
-const getFlag = (filename: string): string => getFileUrl(`../assets/flags/${filename}`);
+const getFlag = (filename: string): string => getFileUrl(`flags/${filename}`);
 
 const setTitle = () => useTitle(`${i18n.t("full_name")} | Portfolio`);
 

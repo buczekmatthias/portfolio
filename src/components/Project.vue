@@ -23,12 +23,12 @@ const props = defineProps<{
 const projectFolder = computed((): string => props.project.name.toLowerCase());
 
 const getProjectFileSrc = computed(() => (file: string = "thumbnail.png"): string => {
-  return getFileUrl(`../assets/projects/${projectFolder.value}/${file}`);
+  return getFileUrl(`projects/${projectFolder.value}/${file}`);
 });
 
 const processedImages = computed((): ProcessedImage[] =>
   props.project.images.map((img: string) => {
-    const url = getFileUrl(`../assets/projects/${projectFolder.value}/${img}`);
+    const url = getFileUrl(`projects/${projectFolder.value}/${img}`);
 
     return <ProcessedImage>{
       href: url,

@@ -4,7 +4,7 @@ import { getFileUrl } from "@/lib/utils";
 
 <template>
   <img
-    :src="getFileUrl('../assets/avatar.png')"
+    :src="getFileUrl('avatar.png')"
     alt="Avatar"
     class="size-12 duration-450 hover:rotate-45 origin-bottom-right"
   />
