@@ -38,6 +38,18 @@ export function getProjects(): ProjectType[] {
       displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "typescript", "tailwindcss"]),
     },
     {
+      name: "Quizzo",
+      year: {
+        start: 2026,
+      },
+      links: {
+        github: { link: "https://github.com/buczekmatthias/Quizzo", variant: "outline", icon: getGithubIconClass() },
+      },
+      images: ["homepage.png", "dashboard.png", "profile.png", "categories.png", "category.png", "quizzes.png", "quiz.png", "quiz_access.png", "admin_users.png", "admin_categories.png", "admin_quizzes.png", "admin_questions.png", "admin_answers.png"],
+      stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
+      displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "typescript", "tailwindcss"]),
+    },
+    {
       name: "Portfolio",
       year: {
         start: 2026,
