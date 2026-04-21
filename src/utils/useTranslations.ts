@@ -48,7 +48,7 @@ function getEnglishContent(): Translation {
       },
       about: {
         header: "About me",
-        short: ["I'm Matthias, a passionate full-stack developer, specialized in the development of web applications based on the Laravel framework.", "Although I enjoy working with Laravel the most, I'm not limiting myself to it. I believe that each job requires the right tools, which is why I'm always eager to try new technologies."],
+        short: ["I'm Matthias, a passionate full-stack developer, specialized in the development of web applications based on the Laravel framework."],
         content: [
           {
             q: "When did I start?",
@@ -90,6 +90,7 @@ function getEnglishContent(): Translation {
       tools_tech: {
         header: "Tools & technologies",
         more: "more",
+        less: "Show less",
       },
       projects: {
         header: "Projects",
@@ -99,13 +100,11 @@ function getEnglishContent(): Translation {
         },
         descriptions: {
           GameSphere: "A template for community-driven platform where gamers can review games, discover new titles, track progress on upcoming games and discuss about games.",
+          GiveawayForge: "A template for a platform to host giveaways.",
+          Quizzo: "A template for quiz posting application.",
           Portfolio: "A personal site of mine, that you are currently visiting.",
         },
       },
-    },
-    buttons: {
-      show_more: "Show more",
-      show_less: "Show less",
     },
   };
 }
@@ -121,13 +120,13 @@ function getPolishContent(): Translation {
         download: "Pobierz",
       },
       availability: {
-        available: "Jestem dostępny do zatrudnienia!",
+        available: "Jestem otwarty na współpracę!",
         hired: "Pracuję, ale moja skrzynka jest ciągle otwarta!",
         reach: "Wyślij wiadomość na",
       },
       about: {
         header: "O mnie",
-        short: ["Jestem Maciej, pełen pasji full-stack developer, specjalizujący się w tworzeniu aplikacji webowych opartych na frameworku Laravel.", "Chociaż najbardziej lubię pracować z Laravelem, nie ograniczam się tylko do niego. Wierzę, że każde zadanie wymaga odpowiednich narzędzi, dlatego zawsze chętnie próbuję nowych technologii."],
+        short: ["Jestem Maciej, pełen pasji full-stack developer, specjalizujący się w tworzeniu aplikacji webowych opartych na frameworku Laravel."],
         content: [
           {
             q: "Kiedy zacząłem?",
@@ -169,6 +168,7 @@ function getPolishContent(): Translation {
       tools_tech: {
         header: "Narzędzia i technologie",
         more: "więcej",
+        less: "Pokaż mniej",
       },
       projects: {
         header: "Projekty",
@@ -178,13 +178,11 @@ function getPolishContent(): Translation {
         },
         descriptions: {
           GameSphere: "Szablon dla platformy, gdzie gracze mogą recenzować gry, odkrywać nowe tytuły, śledzić postępy nadchodzących gier i dyskutować o grach.",
+          GiveawayForge: "Szablon dla platformy do organizowania giveaway'ów",
+          Quizzo: "Szablon dla platformy do organizowania quizów",
           Portfolio: "Moja strona, którą właśnie odwiedzasz.",
         },
       },
-    },
-    buttons: {
-      show_more: "Pokaż więcej",
-      show_less: "Pokaż mniej",
     },
   };
 }

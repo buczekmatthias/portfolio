@@ -19,7 +19,6 @@ export interface ProjectType {
   };
   images: string[];
   stack: StackItem;
-  displayStack: StackItem;
 }
 
 export function getProjects(): ProjectType[] {
@@ -35,7 +34,17 @@ export function getProjects(): ProjectType[] {
       },
       images: ["homepage.png", "dashboard.png", "game.png", "discussion.png", "user_profile.png"],
       stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
-      displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "typescript", "tailwindcss"]),
+    },
+    {
+      name: "GiveawayForge",
+      year: {
+        start: 2026,
+      },
+      links: {
+        github: { link: "https://github.com/buczekmatthias/GiveawayForge", variant: "outline", icon: getGithubIconClass() },
+      },
+      images: ["active_giveaway.png", "admin_giveaways.png", "admin_users.png", "complete_giveaway.png", "create_giveaway.png", "dashboard.png", "giveaways.png", "homepage.png"],
+      stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
     },
     {
       name: "Quizzo",
@@ -47,7 +56,6 @@ export function getProjects(): ProjectType[] {
       },
       images: ["homepage.png", "dashboard.png", "profile.png", "categories.png", "category.png", "quizzes.png", "quiz.png", "quiz_access.png", "admin_users.png", "admin_categories.png", "admin_quizzes.png", "admin_questions.png", "admin_answers.png"],
       stack: getProjectStackContent(["laravel", "vue", "inertiajs", "tailwindcss", "postgresql", "git"]),
-      displayStack: getProjectStackContent(["laravel", "vue", "inertiajs", "typescript", "tailwindcss"]),
     },
     {
       name: "Portfolio",
@@ -59,7 +67,6 @@ export function getProjects(): ProjectType[] {
       },
       images: [],
       stack: getProjectStackContent(["vue", "tailwindcss", "typescript", "git"]),
-      displayStack: getProjectStackContent(["vue", "tailwindcss", "typescript"]),
     },
   ];
 }

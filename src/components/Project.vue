@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import type { ProjectType } from "@/data/Projects";
-import LazyAvatar from "./LazyAvatar.vue";
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 import { Button } from "@/components/ui/button";
@@ -41,36 +40,11 @@ const processedImages = computed((): ProcessedImage[] =>
 <template>
   <Sheet>
     <SheetTrigger as-child>
-      <div class="flex flex-col gap-2.5 cursor-pointer relative">
-        <LazyAvatar :src="getProjectFileSrc()" />
-        <p class="absolute top-3 left-2.5 bg-popover px-3.5 py-2 rounded-full">{{ project.name }}</p>
-        <div class="absolute top-3 right-2.5 bg-popover px-3.5 py-2 rounded-full flex">
+      <div class="px-3.5 py-2 bg-sky-800/50 flex justify-between hover:bg-sky-500/50 duration-150 gap-2.5 cursor-pointer rounded-md not-last:mb-4">
+        <p>{{ project.name }}</p>
+        <div class="flex">
           <p>{{ project.year.start }}</p>
           <p v-if="project.year.end">-{{ project.year.end }}</p>
-        </div>
-        <div class="absolute bottom-3 left-2.5 right-2.5 flex gap-2">
-          <div class="flex gap-4 bg-popover px-3.5 py-2 rounded-full">
-            <Icon
-              :icon="icon"
-              v-for="icon in Object.values(project.displayStack)"
-              :key="icon"
-              class="size-5 mt-0.5"
-            />
-          </div>
-          <div
-            class="bg-popover px-3.5 py-2 rounded-full flex items-center gap-2"
-            v-if="project.links.website"
-          >
-            <Globe class="size-5" />
-            <p>{{ $t("sections.projects.live") }}</p>
-          </div>
-          <div
-            class="bg-popover px-3.5 py-2 rounded-full flex items-center gap-2"
-            v-if="project.images.length > 0"
-          >
-            <Image class="size-5" />
-            <p>{{ project.images.length }}</p>
-          </div>
         </div>
       </div>
     </SheetTrigger>
@@ -128,8 +102,9 @@ const processedImages = computed((): ProcessedImage[] =>
           <a
             :href="content.link"
             target="_blank"
-            >{{ $t(`sections.projects.buttons.${type}`) }}</a
           >
+            {{ $t(`sections.projects.buttons.${type}`) }}
+          </a>
         </Button>
       </SheetFooter>
     </SheetContent>

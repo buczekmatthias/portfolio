@@ -64,7 +64,7 @@ const updateStack = (group: string, showAll: boolean = false): void => {
           class="cursor-pointer text-sky-500 text-sm self-start -mt-2"
           @click="updateStack(group)"
         >
-          {{ $t("buttons.show_less") }}
+          {{ $t("sections.tools_tech.less") }}
         </p>
       </div>
     </div>

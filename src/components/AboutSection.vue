@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { Button } from "@/components/ui/button";
-
-const showMore = ref<boolean>(false);
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 </script>
 
 <template>
@@ -16,28 +13,19 @@ const showMore = ref<boolean>(false);
         {{ row }}
       </p>
     </div>
-    <Button
-      @click="showMore = !showMore"
-      variant="outline"
-      class="cursor-pointer"
-      :class="showMore ? 'my-4' : 'mt-4'"
+
+    <Accordion
+      type="single"
+      collapsible
+      class="w-full mt-4"
     >
-      {{ $t(showMore ? "buttons.show_less" : "buttons.show_more") }}
-    </Button>
-    <div
-      class="rounded-lg flex flex-col gap-10"
-      :class="{
-        'h-0 overflow-hidden': !showMore,
-        'h-fit border p-3': showMore,
-      }"
-    >
-      <div
-        class="flex flex-col gap-4"
+      <AccordionItem
+        :value="`item-${i}`"
         v-for="(content, i) in $tm('sections.about.content')"
         :key="i"
       >
-        <p class="text-2xl">{{ (i as number) + 1 }}. {{ content.q }}</p>
-        <div class="flex flex-col gap-6">
+        <AccordionTrigger class="cursor-pointer">{{ content.q }}</AccordionTrigger>
+        <AccordionContent>
           <p
             v-for="(answer, i) in content.a"
             :key="i"
@@ -45,8 +33,8 @@ const showMore = ref<boolean>(false);
           >
             {{ answer }}
           </p>
-        </div>
-      </div>
-    </div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   </div>
 </template>
