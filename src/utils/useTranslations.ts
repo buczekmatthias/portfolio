@@ -90,6 +90,7 @@ function getEnglishContent(): Translation {
           },
           BallotBox: {
             description: "A platform for creating and voting on polls.",
+            key_features: ["Public and private polls with link-based voting", "Multi-choice support with live results breakdown and percentage distribution", "User vote tracking with visual results display"],
           },
           Quizzo: {
             description: "A platform for creating and sharing quizzes.",
@@ -176,6 +177,7 @@ function getPolishContent(): Translation {
           },
           BallotBox: {
             description: "Platforma do tworzenia ankiet i głosowania.",
+            key_features: ["Publiczne i prywatne ankiety z głosowaniem przez link", "Obsługa wielu odpowiedzi z podglądem wyników i podziałem procentowym", "Śledzenie głosów użytkownika z wizualizacją wyników"],
           },
           Quizzo: {
             description: "Platforma do tworzenia i udostępniania quizów.",
