@@ -26,7 +26,7 @@ export const stack: StackItem[] = [
     type: "framework",
   },
   {
-    name: "TawilwindCSS",
+    name: "TailwindCSS",
     icon: "simple-icons:tailwindcss",
     type: "framework",
   },
