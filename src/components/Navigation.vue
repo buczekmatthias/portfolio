@@ -4,8 +4,9 @@ import Logo from "@/components/Logo.vue";
 </script>
 
 <template>
-  <div class="px-4 py-6 flex items-center gap-2 justify-between">
+  <div class="section px-4 py-6 flex items-center justify-between gap-4">
     <Logo />
+
     <LanguageSelect />
   </div>
 </template>

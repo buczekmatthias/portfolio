@@ -14,18 +14,19 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "@lucide/vue": "^1.17.0",
     "@tailwindcss/vite": "^4.1.18",
-    "@vueuse/core": "^14.2.1",
+    "@vueuse/core": "^14.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.562.0",
-    "reka-ui": "^2.9.6",
+    "reka-ui": "^2.9.7",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.26",
     "vue-i18n": "^11.2.8",
-    "vue-sonner": "^2.0.9",
-    "vue3-lazyload": "^0.3.8"
+    "vue-router": "^5.0.6",
+    "vue-sonner": "^2.0.9"
   },
   "devDependencies": {
     "@iconify/vue": "^5.0.0",

@@ -1,71 +1,63 @@
 <script setup lang="ts">
-import { getEntries, getRemainingItems, INCREMENT_LIMIT_VALUE, type StackItem } from "@/data/Stack";
+import { getStackByType, type StackItem } from "@/data/Stack";
 
 import { Icon } from "@iconify/vue";
-import { onBeforeMount, ref } from "vue";
+import Heading from "@/components/Heading.vue";
+import { capitalize, ref, watch } from "vue";
 
-const stack = ref<{ [key: string]: StackItem }>({
-  Frontend: {},
-  Backend: {},
-  Tools: {},
-});
-const stackRemaining = ref<{ [key: string]: number }>({
-  Frontend: 0,
-  Backend: 0,
-  Tools: 0,
-});
+const tab = ref<string>("all");
 
-onBeforeMount((): void => {
-  Object.keys(stack.value).forEach((k: string) => {
-    stack.value[k] = getEntries(k);
-    stackRemaining.value[k] = getRemainingItems(k);
-  });
-});
+const tabs = ["all", "language", "framework", "other"];
 
-const updateStack = (group: string, showAll: boolean = false): void => {
-  stack.value[group] = getEntries(group, showAll);
-  stackRemaining.value[group] = showAll ? 0 : getRemainingItems(group);
-};
+const stack = ref<StackItem[]>(getStackByType(tab.value));
+
+watch(
+  () => tab.value,
+  () => (stack.value = getStackByType(tab.value)),
+);
 </script>
 
 <template>
-  <div>
-    <p class="section-header">{{ $t("sections.tools_tech.header") }}</p>
-    <div class="grid lg:grid-cols-3 gap-4">
-      <div
-        class="flex flex-col gap-4"
-        v-for="[group, items] in Object.entries(stack)"
-        :key="group"
-      >
-        <p>{{ group }}</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-2">
-          <div
-            class="flex items-center gap-3 bg-popover p-3 rounded-md hover:bg-popover-foreground/10 duration-150 text-sm"
-            v-for="[item, icon] in Object.entries(items)"
-            :key="item"
-          >
-            <Icon
-              :icon="icon"
-              class="size-5"
-            />
+  <div class="grid">
+    <Heading
+      :title="$t('sections.tools_tech.header')"
+      class="justify-self-center"
+    />
 
-            <p>{{ item }}</p>
-          </div>
-        </div>
-        <p
-          v-if="stackRemaining[group]! > 0"
-          class="cursor-pointer text-sky-500 text-sm self-start -mt-2"
-          @click="updateStack(group, true)"
-        >
-          +{{ stackRemaining[group] }} {{ $t("sections.tools_tech.more") }}
-        </p>
-        <p
-          v-if="stackRemaining[group]! === 0 && Object.keys(stack[group]!).length > INCREMENT_LIMIT_VALUE"
-          class="cursor-pointer text-sky-500 text-sm self-start -mt-2"
-          @click="updateStack(group)"
-        >
-          {{ $t("sections.tools_tech.less") }}
-        </p>
+    <div class="grid grid-cols-4 rounded-md bg-secondary/8 p-1.5 mb-4 w-full max-w-xl justify-self-center gap-1.5">
+      <button
+        v-for="t in tabs"
+        :key="t"
+        class="capitalize p-1.5 cursor-pointer text-sm rounded-md"
+        @click="tab = t"
+        :class="{
+          'bg-primary': t === tab,
+          'duration-150 hover:bg-primary/15': t !== tab,
+        }"
+      >
+        {{ t }}
+      </button>
+    </div>
+
+    <div
+      class="grid gap-2"
+      style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))"
+    >
+      <div
+        class="flex flex-col items-center gap-1 bg-secondary/5 rounded-md p-6"
+        v-for="item in stack"
+        :key="item.name"
+      >
+        <Icon
+          :icon="item.icon"
+          class="size-6 md:size-7 mb-2.5"
+        />
+        <Heading
+          :title="item.name"
+          class="text-center"
+          variant="small"
+        />
+        <p class="text-accent text-xs">{{ capitalize(item.type) }}</p>
       </div>
     </div>
   </div>

@@ -30,30 +30,33 @@
   --color-ring: var(--ring);
 
   --h-screen: 100vh 100dvh;
+
+  --color-link: var(--link);
 }
 
 :root {
-  --background: oklch(20.019% 0.00002 271.152);
+  --background: hsl(240, 27%, 8%);
   --foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(27.685% 0.00003 271.152);
+  --popover: oklch(22.213% 0.00003 271.152);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
+  --primary: oklch(40.397% 0.18674 263.121);
+  --primary-foreground: oklch(95.514% 0.00011 271.152);
+  --secondary: hsl(255, 92%, 76%);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(42.393% 0.00005 271.152);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(40.54% 0.00005 271.152);
+  --muted-foreground: hsl(0 0% 63.9%);
+  --accent: oklch(45.678% 0.00005 271.152);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
+  --link: hsl(184, 99%, 62%);
 }
 
 @layer components {
-  .section-header {
-    @apply font-semibold text-2xl mb-4;
+  .section {
+    @apply max-lg:px-4 mx-auto max-w-6xl;
   }
 }
 
@@ -66,6 +69,6 @@
   }
 }
 
-[data-sonner-toast][data-styled="true"] [data-description] {
-  @apply text-muted-foreground;
+#app {
+  @apply bg-background text-foreground w-full min-h-dvh flex flex-col *:w-full;
 }

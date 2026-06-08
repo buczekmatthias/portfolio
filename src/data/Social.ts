@@ -5,7 +5,6 @@ export interface Social {
   icon: string;
   text: string;
   value: string;
-  backgroundClass?: string;
   action: Function;
 }
 
@@ -15,7 +14,6 @@ export function getSocialInfo(): Social[] {
       icon: getEmailIconClass(),
       text: "E-mail",
       value: "buczekmatthias@gmail.com",
-      backgroundClass: "bg-red-600",
       action: (): void => {
         window.open("mailto:buczekmatthias@gmail.com", "_blank");
       },
@@ -32,7 +30,6 @@ export function getSocialInfo(): Social[] {
       icon: getDiscordIconClass(),
       text: "Discord",
       value: "_.hazy",
-      backgroundClass: "bg-indigo-500",
       action: (): void => {
         navigator.clipboard.writeText("_.hazy");
         toast.info("Copied to clipboard", {

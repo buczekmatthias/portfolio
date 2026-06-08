@@ -9,7 +9,6 @@
 - shadcn/vue
 - Lucide
 - Iconify.design
-- [Flagpack](https://www.figma.com/community/file/917769067765992823/flagpack-stunning-flag-icons-for-your-digital-product)
 
 ## Project Setup
 

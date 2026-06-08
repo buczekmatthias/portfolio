@@ -4,35 +4,40 @@ import { Button } from "@/components/ui/button";
 import { getSocialInfo } from "@/data/Social";
 import { Icon } from "@iconify/vue";
 import LanguageSelect from "@/components/LanguageSelect.vue";
-
-const socials = getSocialInfo();
+import Heading from "@/components/Heading.vue";
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 rounded-t-2xl bg-popover py-6 px-6 sm:flex-row sm:justify-between sm:items-center">
-    <div class="flex flex-col gap-4">
-      <Logo />
-      <div class="mb-4">
-        <p class="text-2xl">{{ $t("full_name") }}</p>
-        <p class="text-muted-foreground">Full-Stack Developer</p>
-      </div>
-      <LanguageSelect />
-    </div>
+  <div class="bg-secondary/5 mt-auto">
+    <div class="section py-8 flex max-md:flex-col gap-8 md:gap-4 md:items-center">
+      <div class="grid max-md:grid-cols-[1fr_auto] max-md:items-center gap-6 md:mr-auto">
+        <div class="flex gap-6 items-center">
+          <Logo />
+          <Heading
+            :title="$t('full_name')"
+            description="Full-Stack Developer"
+            class="mb-0!"
+          />
+        </div>
 
-    <div class="flex flex-col items-start gap-2">
-      <template
-        v-for="social in socials"
-        :key="social.text"
-      >
-        <Button
-          variant="link"
-          @click="social.action"
-          class="cursor-pointer px-0!"
-        >
-          <Icon :icon="social.icon" />
-          {{ social.value }}
-        </Button>
-      </template>
+        <LanguageSelect />
+      </div>
+
+      <div class="grid-rows-[auto_1fr] grid">
+        <Heading :title="$t('sections.footer.find_me')" />
+        <div class="flex flex-col items-start gap-2">
+          <Button
+            v-for="social in getSocialInfo()"
+            :key="social.text"
+            @click="social.action"
+            variant="link"
+            class="cursor-pointer px-0!"
+          >
+            <Icon :icon="social.icon" />
+            {{ social.value }}
+          </Button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
