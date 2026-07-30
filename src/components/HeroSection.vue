@@ -14,7 +14,7 @@ const { height } = useElementSize(content);
 
 const socials = getSocialInfo();
 
-const cvSrc = computed((): string => new URL(`../assets/cv.pdf`, import.meta.url).href);
+const cvSrc = computed((): string => new URL(`../assets/cv_${locale.value}.pdf`, import.meta.url).href);
 
 const codePhpSrc = computed((): string => new URL("../assets/code_php.png", import.meta.url).href);
 const codeVueSrc = computed((): string => new URL("../assets/code_vue.png", import.meta.url).href);

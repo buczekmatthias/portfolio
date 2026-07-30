@@ -57,7 +57,7 @@ function getEnglishContent(): Translation {
               "When I switched to Laravel, frontend was based on Blade with JavaScript. Then I experimented a bit with Vue and I knew I didn't want to go back. I made an application combining a Vue SPA with a Laravel API but it didn't feel joyful enough for some reason. Then I discovered Inertia.js and I've stuck with it pretty much ever since.",
               "For automation scripts I enjoy using Python, whether it's a simple task or more complex chain of actions.",
               "When it comes to mobile apps I enjoy working with Flutter. I haven't had many opportunities to work with it outside of one simple app for personal use but I definitely wouldn't hesitate to use it again.",
-              "I'm planning to get into Rust as well in the future, get to know React better to expand my stack and deepen my Python knowledge.",
+              "I'm planning to get into Rust as well in the future and deepen my Python knowledge.",
             ],
           },
           {
@@ -144,7 +144,7 @@ function getPolishContent(): Translation {
               "Po przeniesieniu się na Laravel, front-end bazował na Blade i JavaScripcie. Potem zacząłem eksperymentować z Vue i szybko przekonałem się, że nie chcę wracać. Stworzyłem aplikację łączącą Vue SPA z Laravel API, ale z jakiegoś powodu nie sprawiło mi to wystarczającej frajdy. Niedługo potem odkryłem Inertia.js i w zasadzie używam tego zestawu od tamtej chwili.",
               "Do skryptów automatyzujących lubię używać Pythona, niezależnie czy jest to proste zadanie czy bardziej skomplikowany ciąg operacji.",
               "Jeśli chodzi o aplikacje mobilne preferuję Flutter. Nie miałem zbyt wiele okazji z nim pracować poza, tak naprawdę, jedną aplikacją na użytek własny, ale nie zawahałbym się użyć go ponownie.",
-              "W przyszłości planuję poznać Rust, zagłębić się w React i pogłębić swoją wiedzę z Pythona.",
+              "W przyszłości planuję poznać Rust i pogłębić swoją wiedzę z Pythona.",
             ],
           },
           {
